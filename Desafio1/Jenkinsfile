@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'login', description: 'Identificador único compuesto por nombre y apellido')
+        string(name: 'nombre', description: 'Nombre del usuario')
+        string(name: 'apellido', description: 'Apellido del usuario')
+        choice(name: 'departamento', choices: ['contabilidad', 'finanzas', 'tecnología'], description: 'Departamento del usuario')
+    }
+
+    stages {
+        stage('Crear Grupos si no existen') {
+            steps {
+                script {
+                    // Evita que haya error en caso de que un Dpto ingresado por parametro no este creado
+                    ['contabilidad', 'finanzas', 'tecnología'].each { groupName ->
+                        sh "getent group ${groupName} || sudo groupadd ${groupName}"
+                    }
+                }
+            }
+        }
+
+        stage('Crear Usuario en Linux') {
+            steps {
+                script {
+                    // Generar contraseña temporal
+                    def tempPassword = sh(script: 'openssl rand -base64 7', returnStdout: true).trim()
+                    
+                    // Crear usuario en Linux
+                    sh "sudo useradd -m -s /bin/bash -g ${params.departamento} -c '${params.nombre} ${params.apellido}' ${params.login}"
+                    sh "echo ${params.login}:${tempPassword} | sudo chpasswd"
+                    
+                    // Mostrar la contraseña temporal generada
+                    echo "La contraseña temporal generada es: ${tempPassword}"
+                    
+                    // Generar Texto par enviar la contraseña temporal por correo electrónico
+                    echo "body:     Tu contraseña temporal es: ${tempPassword}. Por favor cámbiala en tu primer inicio de sesión." 
+                    echo "subject:  Contraseña Temporal "
+                    echo "to:       email@dominio.com" 
+                }
+            }
+        }
+    }
+}
