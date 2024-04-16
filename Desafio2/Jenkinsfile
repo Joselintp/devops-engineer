@@ -1,15 +1,23 @@
 pipeline {
+    // Contiene la estructura utilizada para realizar la configuración de un webhook en un repositorio de
+    //Github y también crear un simple pipeline para ejecutar un build y testear un proyecto nodejs.Jenkins Webhook y nodejs API
     agent any
-
+    // Especifica la herramienta Node.js que se utilizará en ese contexto de jenkins --> Tools --> NodeJS installations --> Name: nodejs
+    tools {
+        nodejs 'nodejs'
+    }
     stages {
         stage('Build') {
+            // Instalar las dependencias de Node.js especificadas en el archivo "package.json"
             steps {
+                echo "Ejecutar npm install" 
                 sh 'npm install'
             }
-        }
-
+        }     
         stage('Test') {
+            // Ejecutar las pruebas especificadas en el archivo "package.json" del proyecto
             steps {
+                echo "Ejecutar npm test" 
                 sh 'npm test'
             }
         }
