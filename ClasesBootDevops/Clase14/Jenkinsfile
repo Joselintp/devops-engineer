@@ -5,7 +5,7 @@ pipeline {
     }
     stages {
         stage('Set execution persmisions') {
-            steps 
+            steps {
             // Establecer los permisos de ejecución en el archivo main.sh ubicado en la ruta ClasesBootDevops/Clase14/
                 sh 'chmod +x ClasesBootDevops/Clase14/main.sh'
             }
