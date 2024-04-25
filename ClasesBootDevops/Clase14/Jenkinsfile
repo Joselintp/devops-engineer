@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Set execution persmisions') {
             steps {
-                sh 'chmod +x Clase14/main.sh'
+                sh 'chmod +x ./main.sh'
             }
         }
         stage('Run script') {
