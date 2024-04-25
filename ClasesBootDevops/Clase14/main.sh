@@ -1,17 +1,17 @@
  #!/bin/bash
 
  # Función para mostrar el título: Información del sistema seguido del nombre del nombre de usuario
- function system_info() {
+ system_info() {
    echo "*** Informe del Sistema para: $(hostname) ***"
  }
 
  # Función para mostrar Fecha / Hora
- function date_and_time() {
+ date_and_time() {
    date +"%d/%m/%Y %H:%M:%S"
  }
 
  # Función para mostrar uso de disco
- function disk_usage() {
+ disk_usage() {
    # df -h: muestra el espacio disponible en el sistema de archivos
    # grep '/': filtra las líneas de salida que contienen la barra diagonal "/"
    # tail -n 1: se utiliza para mostrar la información de la partición raíz 
@@ -20,19 +20,19 @@
  }
 
  # Función para mostrar usuarios conectados
- function logged_users() {
+ logged_users() {
    who
  }
 
  # Función para mostrar el uso de memoria en Megas
- function memory_usage() {
+ memory_usage() {
  # free: muestra información sobre el uso de memoria del sistema
  # awk permite procesar y manipular texto.
  free -m | awk 'NR==2{printf "Total: %sMB - Disponible: %sMB\n", $2, $7}'
  }
 
  # Función para mostrar los procesos que coincidan con el nombre indicado
- function display_processes() {
+ display_processes() {
    if [ -z "$1" ]; then
      echo "No se especificó ningún nombre de proceso"
    else
