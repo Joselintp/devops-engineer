@@ -5,7 +5,7 @@ Contiene ejercicios prácticos realizados en Clases
 
 ### Algunos comandos
 ```
--  [Script-Bash][(https://replit.com/@joselinteixeira/Script-Bash#main.sh)]
+[Script-Bash](https://replit.com/@joselinteixeira/Script-Bash#main.sh)
 -  getent group & sudo groupadd  (Para agregar grupo)
 -  openssl rand -base64  (para generar contraseña)
 -  sudo useradd (para agregar usuario)
