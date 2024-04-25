@@ -33,12 +33,10 @@
 
  # Función para mostrar los procesos que coincidan con el nombre indicado
  display_processes() {
-   if [ -z "$1" ]; then
-     echo "No se especificó ningún nombre de proceso"
-   else
-     ps -aux | grep $1
-   fi
- }
+  process_name=$1
+    echo "$process_name"
+    echo "Processes: $(sudo ps -aux |grep $process_name)"
+    }
 
 main(){
  # Función principal
