@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('Set execution persmisions') {
             steps {
-                sh 'chmod +x ./main.sh'
+                sh 'chmod +x ClasesBootDevops/Clase14/main.sh'
             }
         }
         stage('Run script') {
             steps {
-                sh './main.sh ${params.process_name}'
+                sh "./ClasesBootDevops/Clase14/main.sh ${params.process_name}"
             }
         }
     }
