@@ -7,13 +7,12 @@ Contiene ejercicios prácticos realizados en Clases
 
 #### Creación de Pipeline 
 
-flowchart LR
-    A-->B
-    B-->C
-    C-->D
-    click A callback "Tooltip for a callback"
-    click B "https://www.github.com" "This is a tooltip for a link"
-    click C call callback() "Tooltip for a callback"
-    click D href "https://www.github.com" "This is a tooltip for a link"
+```mermaid
+graph TD;
+    A[Start] --> B[Check input parameters];
+    B -->|Valid parameters| C[Execute main.sh];
+    B -->|Invalid parameters| D[Display error message and exit];
+    C --> E[End];
+    D --> E;
 
 
