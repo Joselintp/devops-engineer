@@ -8,6 +8,7 @@ pipeline {
             steps {
                 sh 'chmod +x Clase14/main.sh'
             }
+        }
         stage('Run script') {
             steps {
                 sh './main.sh ${params.process_name}'
