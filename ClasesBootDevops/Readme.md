@@ -9,10 +9,8 @@ Contiene ejercicios prácticos realizados en Clases
 
 ```mermaid
 graph TD;
-    A[Start] --> B[Check input parameters];
-    B -->|Valid parameters| C[Execute main.sh];
-    B -->|Invalid parameters| D[Display error message and exit];
-    C --> E[End];
-    D --> E;
+    A[Inicio del Pipeline] --> B[Establecer permisos de ejecución]
+    B --> C[Ejecutar script main.sh con parámetro process_name]
+    C --> D[Fin del Pipeline]
 
 
