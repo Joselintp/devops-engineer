@@ -6,7 +6,14 @@ Contiene ejercicios prácticos realizados en Clases
 ### Algunos comandos
 ```
 [Script-Bash]: <https://replit.com/@joselinteixeira/Script-Bash>
--  getent group & sudo groupadd  (Para agregar grupo)
--  openssl rand -base64  (para generar contraseña)
--  sudo useradd (para agregar usuario)
--  sudo chpasswd (asignar contraseña temp)
+###FlowChart
+
+```flow
+st=>start: Login
+op=>operation: Login operation
+cond=>condition: Successful Yes or No?
+e=>end: To admin
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
