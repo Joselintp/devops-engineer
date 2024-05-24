@@ -28,3 +28,23 @@ Contiene todo el contenido relacionado con los desafíos  del Bootcamp Devops #6
     # verifies the right NPM version is in the environment
     npm -v # should print `10.5.0`
 ```
+>## Desafio 3: Actividad AWS
+
+### Algunos comandos
+```
+-  Conéctar a la instancia EC2 a través de SSH --> ssh -i <ruta_a_tu_clave_privada> ec2-user@<direccion_ip_publica_de_la_instancia>
+-  Verificar que el servicio Apache (httpd) esté instalado y en ejecución --> sudo systemctl status httpd
+-  Verificar si AWS CLI está instalado --> aws --version
+-  AWS Configuración, solicitará clave de acceso, clave secreta, región predeterminada y formato de salida --> aws configure
+- Instalación de AWS CLI en Ubuntu
+    sudo apt-get update
+    sudo apt-get install awscli
+    aws --version
+- Listar los dispositivos de bloque -->    lsblk
+- Formatea volumen EBS --> sudo mkfs -t ext4 /dev/xvdf
+- Crea el directorio de montaje para el volumen EBS -->  sudo mkdir /desafios
+- Monta manualmente el volumen EBS  --> sudo mount /desafios
+- Verificar que el volumen EBS esté montado correctamente y que se pueda escribir en él
+    cd /desafios
+    sudo touch test.txt
+```
