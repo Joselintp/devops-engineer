@@ -48,3 +48,23 @@ Contiene todo el contenido relacionado con los desafíos  del Bootcamp Devops #6
     cd /desafios
     sudo touch test.txt
 ```
+
+>## Desafio 4: AWS Uso de roles
+
+### Algunos comandos
+```
+# Este comando crea un bucket
+aws s3api create-bucket \
+    --bucket my-bucket- \
+    --region us-east-1
+
+# Comando aws iam create-user
+aws iam create-user --user-name s3-support
+
+# Este comando crea un nuevo rol en IAM
+# aws iam create-role
+aws iam create-role --role-name s3-write-role --assume-role-policy-document file://trust-policy.json
+
+# Configuración aws
+aws configure
+```
