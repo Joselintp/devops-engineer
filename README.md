@@ -68,3 +68,19 @@ aws iam create-role --role-name s3-write-role --assume-role-policy-document file
 # Configuración aws
 aws configure
 ```
+>## Desafio 5: AWS RDS + EC2
+
+### Algunos comandos
+```
+# Comando para instalar cliente mariadb en Ubuntu
+sudo apt install mariadb-client-core-10.6
+
+# Otra forma de instalar cliente mariadb en Ubuntu
+sudo apt install mariadb-client-core
+
+# Este comando permite conectarnos a una instancia de mariadb
+mariadb -h endpoint -u admin -p
+
+# Este comando enumera las bases de datos 
+SHOW DATABASES; 
+```
