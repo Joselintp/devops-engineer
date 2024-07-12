@@ -1,0 +1,6 @@
+- name: crear directorio para el sitio
+  file:
+      path: "{{ site_dir }}"
+      state: directory
+      owner: www-data
+      group: www-data
