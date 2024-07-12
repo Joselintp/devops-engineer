@@ -84,3 +84,16 @@ mariadb -h endpoint -u admin -p
 # Este comando enumera las bases de datos 
 SHOW DATABASES; 
 ```
+>## Desafio 6: Ansible proyecto modular
+
+### Algunos comandos
+```
+# Instalación de Ansible
+sudo apt update
+sudo apt-get install ansible
+
+# Verificar Versión de Ansible
+ansible --version
+
+
+```
