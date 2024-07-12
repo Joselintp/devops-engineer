@@ -95,5 +95,13 @@ sudo apt-get install ansible
 # Verificar Versión de Ansible
 ansible --version
 
+# Verificar IP de instancias Controller y Node1 - Creadas mediante Multipass
+multipass list
+
+# Comprobación de conexión con el host, con este comando verificamos que todos los hosts responden al ping
+ansible all -i inventory.ini -m ping
+
+# Ejecución del playbook
+ansible-playbook -i inventory.ini main.yaml 
 
 ```
