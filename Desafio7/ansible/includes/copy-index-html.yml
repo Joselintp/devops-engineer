@@ -1,0 +1,7 @@
+- name: copiar index.html al directorio del sitio
+  copy:
+      src: files/index.html
+      dest: "{{ site_dir }}"
+      owner: www-data
+      group: www-data
+      mode: '0644'
