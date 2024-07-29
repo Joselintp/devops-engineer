@@ -1,0 +1,14 @@
+pipeline {
+    agent { label 'ansible-controller' }
+    environment {
+        ANSIBLE_PRIVATE_KEY=credentials('ansible-private-key') 
+        ANSIBLE_CONFIG='./Desafio7/ansible/ansible.cfg'
+    }
+    stages {
+        stage('Run Ansible Playbook from Jenkins') {
+            steps {
+                sh 'ansible-playbook -i ./Desafio7/ansible/inventory.ini --private-key=$ANSIBLE_PRIVATE_KEY ./Desafio7/ansible/main.yml'
+            }
+        }
+    }
+}
