@@ -21,6 +21,8 @@ ssh-keygen
 # Ejecución del playbook
 ansible-playbook -i inventory.ini main.yaml 
 
+# Ejecución de Ngrok
+ngrok http http://192.168.68.60:8080
 
 ```
 
