@@ -23,7 +23,7 @@ pipeline {
         }
 	stage('Run Ansible Playbook from Jenkins for production') {
             when {
-                branch 'staging'
+                branch 'main'
             }
             steps {
 		sh 'ansible-playbook -i ./Desafio7/ansible/inventory.ini --private-key=$ANSIBLE_PRIVATE_KEY ./Desafio7/ansible/main.yml --limit production'
