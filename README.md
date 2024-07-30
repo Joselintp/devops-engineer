@@ -105,3 +105,22 @@ ansible all -i inventory.ini -m ping
 ansible-playbook -i inventory.ini main.yaml 
 
 ```
+>## Desafio 7: Ansible proyecto CI_CD
+
+### Algunos comandos
+```
+# Verificar IP de instancias Controller, Node1, Node 2 y Node3 - Creadas mediante Multipass
+multipass list
+
+# Para generar un nuevo par de claves SSH.
+ssh-keygen
+
+# Ejecución del playbook
+ansible-playbook -i inventory.ini main.yaml
+
+# Ejecución de Ngrok
+ngrok http http://192.168.68.60:8080
+
+
+
+```
