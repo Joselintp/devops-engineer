@@ -1,0 +1,33 @@
+pipeline {
+    agent { label 'ansible-controller' }
+    environment {
+        ANSIBLE_PRIVATE_KEY=credentials('ansible-private-key') 
+        ANSIBLE_CONFIG='./Desafio7/ansible/ansible.cfg'
+    }
+    stages {
+	stage('Run Ansible Playbook from Jenkins for development') {
+            when {
+                branch 'dev'
+            }
+            steps {
+		            sh 'ansible-playbook -i ./Desafio7/ansible/inventory.ini --private-key=$ANSIBLE_PRIVATE_KEY ./Desafio7/ansible/main.yml --limit development'
+            }
+        }
+	stage('Run Ansible Playbook from Jenkins for staging') {
+            when {
+                branch 'staging'
+            }
+            steps {
+		            sh 'ansible-playbook -i ./Desafio7/ansible/inventory.ini --private-key=$ANSIBLE_PRIVATE_KEY ./Desafio7/ansible/main.yml --limit staging'
+            }
+        }
+	stage('Run Ansible Playbook from Jenkins for production') {
+            when {
+                branch 'staging'
+            }
+            steps {
+		            sh 'ansible-playbook -i ./Desafio7/ansible/inventory.ini --private-key=$ANSIBLE_PRIVATE_KEY ./Desafio7/ansible/main.yml --limit production'
+            }
+        }
+     }
+}
