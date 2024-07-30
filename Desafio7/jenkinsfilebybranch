@@ -10,7 +10,7 @@ pipeline {
                 branch 'dev'
             }
             steps {
-		            sh 'ansible-playbook -i ./Desafio7/ansible/inventory.ini --private-key=$ANSIBLE_PRIVATE_KEY ./Desafio7/ansible/main.yml --limit development'
+		sh 'ansible-playbook -i ./Desafio7/ansible/inventory.ini --private-key=$ANSIBLE_PRIVATE_KEY ./Desafio7/ansible/main.yml --limit development'
             }
         }
 	stage('Run Ansible Playbook from Jenkins for staging') {
@@ -18,7 +18,7 @@ pipeline {
                 branch 'staging'
             }
             steps {
-		            sh 'ansible-playbook -i ./Desafio7/ansible/inventory.ini --private-key=$ANSIBLE_PRIVATE_KEY ./Desafio7/ansible/main.yml --limit staging'
+		sh 'ansible-playbook -i ./Desafio7/ansible/inventory.ini --private-key=$ANSIBLE_PRIVATE_KEY ./Desafio7/ansible/main.yml --limit staging'
             }
         }
 	stage('Run Ansible Playbook from Jenkins for production') {
@@ -26,7 +26,7 @@ pipeline {
                 branch 'staging'
             }
             steps {
-		            sh 'ansible-playbook -i ./Desafio7/ansible/inventory.ini --private-key=$ANSIBLE_PRIVATE_KEY ./Desafio7/ansible/main.yml --limit production'
+		sh 'ansible-playbook -i ./Desafio7/ansible/inventory.ini --private-key=$ANSIBLE_PRIVATE_KEY ./Desafio7/ansible/main.yml --limit production'
             }
         }
      }
