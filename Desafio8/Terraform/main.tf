@@ -13,5 +13,5 @@ terraform {
   }
 }
 provider "aws" {
-  region = "us-west-1"  # Cambia a tu región deseada
+  region = "us-east-1"  # Cambia a tu región deseada
 }
