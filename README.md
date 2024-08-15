@@ -126,11 +126,11 @@ ngrok http http://192.168.68.60:8080
 >## Desafio 8: Terraform + Github Actions
 
 ### Referencias
-```
+
 [Documentación oficial de actions/checkout](https://github.com/actions/checkout)
 
 [Guías para GitHub Actions](https://docs.github.com/es/actions/guides)
 
 [Guías para Terraform](https://developer.hashicorp.com/terraform/docs)
 
-```
+
