@@ -2,15 +2,14 @@
 FROM node:22
 
 
-
-# Indicamos nuestro directorio en Docker
-RUN mkdir -p /home/app
+# Set the working directory
+WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY . /home/app
+COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci
 
 # Copy the application code
 COPY . .
