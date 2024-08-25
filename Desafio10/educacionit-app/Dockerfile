@@ -1,5 +1,5 @@
 # Usamos la version oficial de NodeJS
-FROM node:22
+FROM node:16
 
 
 # Set the working directory
