@@ -1,14 +1,16 @@
-# Use the official Node.js image as the base image
-FROM node:16
+# Usamos la version oficial de NodeJS
+FROM node:22
 
-# Set the working directory
-WORKDIR /app
+
+
+# Indicamos nuestro directorio en Docker
+RUN mkdir -p /home/app
 
 # Copy package.json and package-lock.json
-COPY package*.json ./
+COPY . /home/app
 
 # Install dependencies
-RUN npm ci
+RUN npm install
 
 # Copy the application code
 COPY . .
