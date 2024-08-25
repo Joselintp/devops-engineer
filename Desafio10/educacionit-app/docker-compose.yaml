@@ -1,3 +1,25 @@
 ## Crea un docker-compose.yaml que contenga los siguientes servicios:
 ## - Un servicio llamado "app" que ejecute el contenedor de la imagen "app" que creaste en el desafío anterior.
 ## - Un servicio llamado "db" que ejecute el contenedor de la imagen "db" que creaste en el desafío anterior
+
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_DB_URI=mongodb://mongo:27017
+      - MONGO_DB_NAME=db-desafio10
+      - MONGO_DB_USER=root
+      - MONGO_DB_PASS=PssD10
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
