@@ -5,7 +5,7 @@ version: '3.8'
 services:
   mongo:
     image: mongo:latest
-    container_name:mongo-prueba
+    container_name: mongoprueba
     ports:
       - "27017:27017"
     volumes:
