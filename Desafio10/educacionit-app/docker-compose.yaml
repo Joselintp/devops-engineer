@@ -10,9 +10,9 @@ services:
       - "3000:3000"
     environment:
       - MONGO_DB_URI=mongodb://mongo:27017
-      - MONGO_DB_NAME=db-desafio10
+      - MONGO_DB_NAME=app-desafio10
       - MONGO_DB_USER=root
-      - MONGO_DB_PASS=PssD10
+      - MONGO_DB_PASS=example
     depends_on:
       - mongo
   mongo:

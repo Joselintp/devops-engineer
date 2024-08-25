@@ -19,9 +19,9 @@ RUN npm run build
 
 # Set the environment variables
 ENV MONGO_DB_URI=mongodb://mongo:27017
-ENV MONGO_DB_NAME=db-desafio10
+ENV MONGO_DB_NAME=app-desafio10
 ENV MONGO_DB_USER=root
-ENV MONGO_DB_PASS=PssD10
+ENV MONGO_DB_PASS=example
 
 # Expose the port
 EXPOSE 3000
