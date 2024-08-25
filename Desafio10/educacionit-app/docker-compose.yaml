@@ -2,8 +2,14 @@
 ## - Un servicio llamado "app" que ejecute el contenedor de la imagen "app" que creaste en el desafío anterior.
 ## - Un servicio llamado "db" que ejecute el contenedor de la imagen "db" que creaste en el desafío anterior
 
-##version: '3.9'
+version: '3'
 services:
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
   app:
     build: .
     ports:
@@ -15,11 +21,5 @@ services:
       - MONGO_DB_PASS=example
     depends_on:
       - mongo
-  mongo:
-    image: mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
 volumes:
   mongo-data:
