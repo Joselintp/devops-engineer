@@ -3,27 +3,28 @@
 ## - Un servicio llamado "db" que ejecute el contenedor de la imagen "db" que creaste en el desafío anterior
 ##version: '3.8'
 
+version: '3.8'
+
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     ports:
       - "3000:3000"
     environment:
-      - MONGO_DB_URI=mongodb://mongo:27017/educacionit
-      - MONGO_DB_NAME=educacionit
-      - MONGO_DB_USER=root
-      - MONGO_DB_PASS=root
+      - MONGODB_URI=mongodb://mongo:27017/educacionit
     depends_on:
       - mongo
+    volumes:
+      - .:/app
+    restart: always
 
   mongo:
     image: mongo:latest
     ports:
       - "27017:27017"
     volumes:
-      - mongo-data:/data/db
+      - mongo_data:/data/db
+    restart: always
 
 volumes:
-  mongo-data:
+  mongo_data:
