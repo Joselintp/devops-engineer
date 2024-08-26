@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { config } from 'dotenv';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -10,9 +11,8 @@ import { MongooseModule } from '@nestjs/mongoose';
     isGlobal: true,
   }),
 MongooseModule.forRoot(process.env.MONGO_DB_URI,{
-  dbName: process.env.MONGO_DB_NAME,
-  user: process.env.MONGO_DB_USER,
-  pass: process.env.MONGO_DB_PASS,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 })],
   controllers: [AppController],
   providers: [AppService],
