@@ -11,7 +11,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - MONGO_DB_URI=mongodb://mongo:27017
+      - MONGO_DB_URI=mongodb://mongo:27017/educacionit
       - MONGO_DB_NAME=educacionit
       - MONGO_DB_USER=root
       - MONGO_DB_PASS=root
