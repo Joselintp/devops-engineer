@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Establece las variables de entorno
-ENV MONGO_DB_URI=mongodb://mongo:27017
+ENV MONGO_DB_URI=mongodb://mongo:27017/educacionit
 ENV MONGO_DB_NAME=educacionit
 ENV MONGO_DB_USER=root
 ENV MONGO_DB_PASS=root
