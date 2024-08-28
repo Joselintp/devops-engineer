@@ -134,3 +134,21 @@ ngrok http http://192.168.68.60:8080
 [Guías para Terraform](https://developer.hashicorp.com/terraform/docs)
 
 
+
+>## Desafio 10: Docker compose
+
+### Algunos comandos
+```
+#  Verificar Docker Compose en la Terminal
+docker-compose --version
+
+# Verificar Docker 
+docker --version
+
+# Levantar entorno
+docker-compose up --build
+
+# Verificar estado de contenedores
+docker-compose ps
+
+```
