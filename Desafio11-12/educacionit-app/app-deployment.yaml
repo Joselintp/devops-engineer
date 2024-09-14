@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: educacionit-app
-          image: edgaregonzalez/educacionit-app:v1.0.0
+          image: joselintp/educacionit-app:v1.0.0
           ports:
             - containerPort: 3000
               protocol: TCP
