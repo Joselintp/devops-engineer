@@ -25,7 +25,7 @@ spec:
       containers:
         - env:
             - name: MONGO_INITDB_ROOT_PASSWORD
-              value: s3cr3t!
+              value: Psw*7845!
             - name: MONGO_INITDB_ROOT_USERNAME
               value: root
           image: mongo:7.0
