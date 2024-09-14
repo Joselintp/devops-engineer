@@ -124,7 +124,7 @@ tolerations: []
 affinity: {}
 
 env:
-  DB_NAME: app-desafio10
-  DB_PASS: Psw*7845!
   DB_URI: mongodb://db-server:27017
+  DB_NAME: app-desafio10
   DB_USER: root
+  DB_PASS: Psw*7845!

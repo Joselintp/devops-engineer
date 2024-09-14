@@ -36,6 +36,17 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: MONGO_DB_URI
+              value: {{ .Values.env.DB_URI }}
+            - name: MONGO_DB_NAME
+              value: {{ .Values.env.DB_NAME }}
+            - name: MONGO_DB_USER
+              value: {{ .Values.env.DB_USER }}
+            - name: MONGO_DB_PASS
+              value: {{ .Values.env.DB_PASS }}
+            - name: PORT
+              value: "{{ .Values.service.port }}"
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
