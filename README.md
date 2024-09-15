@@ -152,3 +152,43 @@ docker-compose up --build
 docker-compose ps
 
 ```
+>## Desafio 11-12: Kubernetes y Helm
+
+### Algunos comandos
+```
+# Levantar entorno
+docker-compose up --build
+
+# Verificar estado de contenedores
+docker-compose ps
+
+# Instalar kompose
+winget install Kubernetes.kompose
+
+# Generar manifiestos de kubernetes
+kompose file –file Docker-compose.yaml convert
+
+# Aplicar los manifiestos a Kubernetes
+kubectl apply -f <nombre de archivo> 
+
+# Validar servicios y volumenes creados
+kubectl get all
+kubectl get pvc
+
+# Instalar Helm - desde Winget (Windows)
+winget install Helm.Helm
+
+# Crear nuestro Chart 
+helm create <name-chart>
+
+# Validaciones de helm
+helm install --dry-run debug .
+helm lint
+
+# Empaquetar Chart
+helm package <name-chart>
+
+# Instalar el chart en el clúster de Kubernetes
+helm install xxxxxxxx.tgz
+
+```
