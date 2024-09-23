@@ -18,3 +18,10 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            memory: "128Mi"   # Solicitud mínima de memoria
+            cpu: "100m"       # Solicitud mínima de CPU
+          limits:
+            memory: "256Mi"   # Límite máximo de memoria
+            cpu: "200m"       # Límite máximo de CPU
