@@ -25,3 +25,4 @@ spec:
           limits:
             memory: "256Mi"   # Límite máximo de memoria
             cpu: "200m"       # Límite máximo de CPU
+            
