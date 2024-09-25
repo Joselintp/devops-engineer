@@ -10,7 +10,7 @@ import { MongooseModule } from '@nestjs/mongoose';
       envFilePath: '.env',
       isGlobal: true,
     }),
-    MongooseModule.forRoot({process.env.MONGO_DB_URI, 
+    MongooseModule.forRoot(process.env.MONGO_DB_URI, {
       dbName: process.env.MONGO_DB_NAME,
       user: process.env.MONGO_DB_USER,
       pass: process.env.MONGO_DB_PASS,
