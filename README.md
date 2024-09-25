@@ -192,3 +192,25 @@ helm package <name-chart>
 helm install xxxxxxxx.tgz
 
 ```
+
+>## Desafio 13-14: ArgoCD y HelmChart
+
+### Algunos comandos
+```
+# Iniciar minikube
+minikube start
+
+# Crear en namespace para argocd
+kubectl create namespace argocd
+
+# Descargar y aplicar los manifestos para ArgoCD
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+# Conseguir la contraseña del usuario admin
+$ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+
+# Exponer el WebUI:
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+
+```
+
